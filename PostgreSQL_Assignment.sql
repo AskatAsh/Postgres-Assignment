@@ -84,6 +84,11 @@ SELECT "name", count(sighting_id) AS total_sightings FROM rangers
     GROUP BY "name"
     ORDER BY "name";
 
+-- Problem 5
+SELECT common_name FROM species
+    FULL JOIN sightings USING(species_id)
+    WHERE sighting_id IS NULL;
+
 SELECT * FROM rangers;
 SELECT * FROM species;
 SELECT * FROM sightings;
