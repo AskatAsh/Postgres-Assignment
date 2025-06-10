@@ -96,6 +96,12 @@ SELECT common_name, sighting_time, "name" FROM sightings
     ORDER BY sighting_time DESC
     LIMIT 2;
 
+-- Problem 7
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE extract(year from discovery_date) < 1800;
+
+
 SELECT * FROM rangers;
 SELECT * FROM species;
 SELECT * FROM sightings;
