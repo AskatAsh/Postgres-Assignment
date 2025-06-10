@@ -110,6 +110,11 @@ SELECT sighting_id,
     END AS time_of_day
 FROM sightings;
 
-SELECT * FROM rangers;
-SELECT * FROM species;
-SELECT * FROM sightings;
+-- Problem 9
+DELETE FROM rangers
+    WHERE ranger_id IN (
+        SELECT ranger_id
+        FROM rangers
+        LEFT JOIN sightings USING(ranger_id)
+        WHERE sighting_id IS NULL
+    );
