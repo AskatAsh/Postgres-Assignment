@@ -67,6 +67,14 @@ INSERT INTO sightings (species_id, ranger_id, "location", sighting_time, note)
         (4, 8, 'Open Ocean', '2024-05-23 07:00:00', 'Blue whale seen again'),
         (7, 7, 'Mountain Pass', '2024-05-24 18:05:00', 'Snow leopard near cave');
 
+-- Problem 1
+INSERT INTO rangers ("name", region)
+    VALUES
+        ('Derek Fox', 'Coastal Plains');
+
+-- Problem 2
+SELECT count(DISTINCT species_id) AS unique_species_count FROM sightings;
+
 SELECT * FROM rangers;
 SELECT * FROM species;
 SELECT * FROM sightings;
